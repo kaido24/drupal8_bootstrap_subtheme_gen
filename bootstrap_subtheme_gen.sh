@@ -27,6 +27,7 @@ cp -R bootstrap/starterkits/less $THEME_NAME
 cd $THEME_NAME
 
 tn='THEMENAME'
+tt='THEMETITLE'
 td='Bootstrap Sub-Theme (LESS)'
 mv $tn.theme  $THEME_NAME.theme
 mv $tn.starterkit.yml $THEME_NAME.info.yml
@@ -35,9 +36,9 @@ mv config/install/THEMENAME.settings.yml config/install/$THEME_NAME.settings.yml
 mv config/schema/THEMENAME.schema.yml  config/schema/$THEME_NAME.schema.yml
 
 sed -i -e "s/$tn/$THEME_NAME/g" $THEME_NAME.info.yml
-sed -i -e "s/$td/$THEME_NAME/g" $THEME_NAME.info.yml
+sed -i -e "s/$tt/$THEME_NAME/g" $THEME_NAME.info.yml
 sed -i -e "s/$tn/$THEME_NAME/g" config/schema/$THEME_NAME.schema.yml
-sed -i -e "s/THEMETITLE/$THEME_NAME/g" config/schema/$THEME_NAME.schema.yml
+sed -i -e "s/$tt/$THEME_NAME/g" config/schema/$THEME_NAME.schema.yml
 
 rm *yml-e
 rm THEMENAME.libraries.yml
