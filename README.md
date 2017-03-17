@@ -4,6 +4,7 @@ I decided to create automatic script using my own workflow.
 
 ##Requirements
 Node.js
+Grunt.js
 Drupal Bootstrap 8.3.x theme
 ##Usage
 Go to Drupal theme folder using terminal window and download shell file.
