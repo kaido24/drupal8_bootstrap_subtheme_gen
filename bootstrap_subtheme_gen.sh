@@ -43,12 +43,10 @@ sed -i -e "s/$tt/$THEME_NAME/g" config/schema/$THEME_NAME.schema.yml
 rm *yml-e
 rm THEMENAME.libraries.yml
 
-echo 'global-styling:
+echo 'framework:
   css:
     theme:
       assets/css/all.min.css: {}
-
-bootstrap-scripts:
   js:
     assets/js/all.min.js: {}
 ' > "${THEME_NAME}.libraries.yml"
