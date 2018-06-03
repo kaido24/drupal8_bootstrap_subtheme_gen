@@ -1,12 +1,13 @@
 #!/bin/bash -x:
 
-echo Are you at themes folder y/n?
+echo Are you at themes/custom folder y/n?
 read IS_THEME_FOLDER
 if [ $IS_THEME_FOLDER != 'y' ];then
   exit
 fi
-if ! [ -d bootstrap ];then
-  drush dl bootstrap
+if ! [ -d ../contrib/bootstrap ];then
+  echo "run command: 'composer require drupal/bootstrap' at your drupal root folder"
+  exit
 fi
 
 echo Enter your bootstrap subtheme name!
@@ -22,7 +23,7 @@ if [ -d $THEME_NAME ];then
   fi
 fi
 
-cp -R bootstrap/starterkits/less $THEME_NAME
+cp -R ../contrib/bootstrap/starterkits/less $THEME_NAME
 
 cd $THEME_NAME
 
