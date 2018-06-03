@@ -7,14 +7,14 @@ Node.js
 Grunt.js
 
 ## Expected folder structure
-themes/contrib/boostrap
+themes/contrib/boostrap</br>
 themes/custom/willGenerateYourTheme
 ## What to expect
 It make a copy from less version of Bootstrap 3 starterkit and configure it using your values and will set up npm packages.
 
 ## Usage
-Make sure you have following folder structure.
-themes/contrib/boostrap
+Make sure you have following folder structure:</br>
+themes/contrib/boostrap</br>
 themes/custom/
 Go to Drupal theme folder using terminal window and download shell file.
 ###  CURL
