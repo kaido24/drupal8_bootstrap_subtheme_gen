@@ -135,9 +135,9 @@ sed -i -e "s/$td/$THEME_NAME/g" $THEME_NAME.info.yml
 
 npm install
 
-sed -i -e "s/bootstrap\/less/\node_modules\/bootstrap\/less/g" less/bootstrap.less
-sed -i -e "s/..\/bootstrap\/fonts/.\/..\/fonts/g" less/variable-overrides.less
-sed -i -e "s/..\/node_modules\/bootstrap\/less\/variables.less/variables.less/g" less/bootstrap.less
+sed -i -e "s@bootstrap/less@node_modules/bootstrap/less@g" less/bootstrap.less
+sed -i -e "s@../bootstrap/fonts@./../fonts@g" less/variable-overrides.less
+sed -i -e "s@../node_modules/bootstrap/less/variables.less@variables.less@g" less/bootstrap.less
 cp node_modules/bootstrap/less/variables.less less/variables.less
 if ! [ -d assets ];then
   mkdir assets
