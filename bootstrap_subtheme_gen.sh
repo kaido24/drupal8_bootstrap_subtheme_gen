@@ -76,6 +76,14 @@ echo '{
 
 echo "module.exports = function(grunt) {
   grunt.initConfig({
+    shell: {
+     options: {
+       stderr: true
+     },
+     target: {
+        command: 'php72-cli ~/vendor/drush/drush/drush cr'
+      }
+    },
     // Less settings
     less: {
       development: {
@@ -89,8 +97,25 @@ echo "module.exports = function(grunt) {
     },
     // Watch settings
     watch: {
-      files: ['less/*'],
-      tasks: ['less']
+      less: {
+        files: ['less/*'],
+        tasks: ['default'],
+      },
+    },
+   
+    // Watch settings
+    watchtwig: {
+      less: {
+        files: ['templates/*'],
+        tasks: ['shell'],
+      },
+    },
+    // Watch settings
+    watchall: {
+      less: {
+        files: ['templates/*', '*theme', '*yml', 'less/*'],
+        tasks: ['default'],
+      },
     },
     // Contact settings
     concat: {
@@ -98,7 +123,7 @@ echo "module.exports = function(grunt) {
         separator: ';'
       },
       dist: {
-        src: ['node_modules/bootstrap/dist/js/bootstrap.js'],
+        src: ['node_modules/bootstrap/dist/js/bootstrap.js','js/webpro.js'],
         dest: 'assets/js/all.js'
       },
     },
@@ -121,12 +146,19 @@ echo "module.exports = function(grunt) {
   });
 
   // Register tasks
-  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  // Rename watch to watchtwig and load it again
+  grunt.renameTask('watch', 'watchtwig');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  // Rename watch to watchtwig and load it again
+  grunt.renameTask('watch', 'watchall');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.registerTask('default', ['concat', 'uglify', 'less', 'cssmin']);
+  grunt.loadNpmTasks('grunt-shell'); 
+  grunt.registerTask('default', ['concat', 'uglify', 'less', 'cssmin', 'shell']);
 };" > Gruntfile.js
 sed -i -e "s/$tn/$THEME_NAME/g" $THEME_NAME.info.yml
 sed -i -e "s/$td/$THEME_NAME/g" $THEME_NAME.info.yml
