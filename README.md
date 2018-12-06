@@ -23,3 +23,13 @@ curl -O https://raw.githubusercontent.com/kaido24/drupal8_bootstrap_subtheme_gen
 wget https://raw.githubusercontent.com/kaido24/drupal8_bootstrap_subtheme_gen/master/bootstrap_subtheme_gen.sh
 
 run command: sh bootstrap_subtheme_gen.sh
+
+
+###Gruntfile.js config
+It has shell support built in and you sould define your drush/drupal executable path or make sure the command works.. 
+If it doesn't suite for your workflow you can just remove shell option.
+
+### Cool commands
+grunt watch - normal watch command with default tasks clear cache included
+grunt watch-all - watches for all the changes and builds the files and clears the caches
+grunt watch-twig - watches twig file changes clears the caches
