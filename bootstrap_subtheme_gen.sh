@@ -58,14 +58,15 @@ echo '{
   "description": "<!-- @file Instructions for subtheming using the LESS Starterkit. --> <!-- @defgroup sub_theming_less --> <!-- @ingroup sub_theming --> # LESS Starterkit",
   "main": "Gruntfile.js",
   "dependencies": {},
-  "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-less": "^1.0.0",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-contrib-concat": "~1.0.1",
-    "grunt-contrib-cssmin": "~1.0.1",
-    "grunt-contrib-uglify": "~2.0.0",
-    "bootstrap": "~3.3.7"
+   "devDependencies": {
+    "bootstrap": "~3.3.7",
+    "grunt": "^1.0.3",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-less": "^2.0.0",
+    "grunt-contrib-uglify": "^4.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-shell": "^2.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
