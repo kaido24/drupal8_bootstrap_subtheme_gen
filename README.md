@@ -30,6 +30,6 @@ It has shell support built in and you sould define your drush/drupal executable 
 If it doesn't suite for your workflow you can just remove shell option.
 
 ### Cool commands
-grunt watch - normal watch command with default tasks clear cache included
-grunt watch-all - watches for all the changes and builds the files and clears the caches
+grunt watch - normal watch command with default tasks clear cache included</br>
+grunt watch-all - watches for all the changes and builds the files and clears the caches</br>
 grunt watch-twig - watches twig file changes clears the caches
