@@ -176,6 +176,7 @@ if ! [ -d assets ];then
   mkdir assets assets/images
 fi
 cp ../../../core/misc/icons/ee0000/required.svg assets/images/
+rm -rf images
 cp -R node_modules/bootstrap/fonts assets
 rm *.yml-e
 rm less/*.less-e
