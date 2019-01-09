@@ -173,9 +173,9 @@ sed -i -e "s@../bootstrap/fonts@./../fonts@g" less/variable-overrides.less
 sed -i -e "s@../node_modules/bootstrap/less/variables.less@variables.less@g" less/bootstrap.less
 cp node_modules/bootstrap/less/variables.less less/variables.less
 if ! [ -d assets ];then
-  mkdir assets
+  mkdir assets assets/images
 fi
-
+cp ../../../core/misc/icons/ee0000/required.svg assets/images
 cp -R node_modules/bootstrap/fonts assets
 rm *.yml-e
 rm less/*.less-e
