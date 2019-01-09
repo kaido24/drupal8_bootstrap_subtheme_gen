@@ -175,7 +175,7 @@ cp node_modules/bootstrap/less/variables.less less/variables.less
 if ! [ -d assets ];then
   mkdir assets assets/images
 fi
-cp ../../../core/misc/icons/ee0000/required.svg assets/images
+cp ../../../core/misc/icons/ee0000/required.svg assets/images/
 cp -R node_modules/bootstrap/fonts assets
 rm *.yml-e
 rm less/*.less-e
